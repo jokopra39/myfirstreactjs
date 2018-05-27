@@ -150,7 +150,7 @@ class Masonry extends React.Component {
     const moves = history.map((step_b, move_so) => {     
       const desc = step_b.title
       const description = <p>{step_b.description}</p>
-      const thisImg =  step_b.url_img != ""?<img className='img-forc' src={step_b.url_img}/> : <div style={{color:"white", height :"274.1px"}}>vddbg</div>
+      const thisImg =  step_b.url_img != ""?<img className='img-forc' src={step_b.url_img}/> : <div style={{color:"white", height :"277.1px"}}>vddbg</div>
       return (
        <div className="item-img">
        <div className= "image">
