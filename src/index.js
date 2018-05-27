@@ -33,7 +33,6 @@ class Board extends React.Component {
   }
 }
 
-//test
 // [
 //   {
 //         id: {unique}
@@ -79,15 +78,15 @@ for(let i = 2; i < 22; i++){
 let dataMustShow = {
 	id: 1,
 	title: "title show",
-	description: desc_wi,
+	description: "",
 	type: "show",
 	url_img: "",
-	class_a: "header-a",
-	class_b: "header-b",
-	class_c: "header-c",
-	class_d: "header-d",
-	class_e: "header-e",
-	class_f: "header-f",
+	class_a: "header-aa",
+	class_b: "header-bb",
+	class_c: "header-cc",
+	class_d: "header-dd",
+	class_e: "header-ee",
+	class_f: "header-ff",
 }
 
 const store = createStore(todos, addData )
@@ -149,21 +148,40 @@ class Masonry extends React.Component {
 
     const moves = history.map((step_b, move_so) => {     
       const desc = step_b.title
-      const description = <p>{step_b.description}</p>
-      const thisImg =  step_b.url_img != ""?<img className='img-forc' src={step_b.url_img}/> : <div style={{color:"white", height :"277.1px"}}>vddbg</div>
+      const classa = step_b.class_a
+      const classb = step_b.class_b
+      const classc = step_b.class_c 
+      const classd = step_b.class_d
+      const classe = step_b.class_e
+      const classf = step_b.class_f
+      const stylein = <div className={classb} style={{position: 'relative'}}>
+      <div className={classc} style={{position: 'absolute',width: '100px', height: '100px', bottom:'290px', backgroundColor:'#2A2D2B', fontSize:'60px', color:'white'}}>21</div>
+       </div>
+       const stylein2 = <div className={classd} style={{position: 'relative'}}>
+       <div className={classe} style={{position: 'absolute',width: '100px', height: '100px', bottom:'60px', backgroundColor:'#2A2D2B', fontSize:'60px', color:'white'}}>21</div>
+       </div>
+
+      const allShow = step_b.class_c == "header-cc"? [stylein,stylein2] : <div></div>
+      
+
+      const description = step_b.class_c == "header-cc"?<div style={{color:"red", height :"741.1px"}}>&nbsp;</div>:<p>{step_b.description}</p>
+      const thisImg =  step_b.url_img != ""?<img className='img-forc' src={step_b.url_img}/> : <div style={{color:"white", height :"382.1px"}}> </div>
       return (
        <div className="item-img">
        <div className= "image">
       {thisImg}
        </div>
        {desc}
-       <div className="header-a"></div>
-       <div className="header-b"></div>
-       <span className="header-c"></span>
-       {description}
-       <div className="header-d"></div>
-       <div className="header-e"></div>
-       <div className="header-f"></div>
+       <div className={classa}></div>
+
+      {allShow}
+
+      <div className={classf}></div>
+       
+      {description}
+       
+       
+       
        </div>
       );
     });
