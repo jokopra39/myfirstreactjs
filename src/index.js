@@ -134,9 +134,6 @@ class Masonry extends React.Component {
       history: historya,
     });
   
-    this.setState({
-      history: historya,
-    });
   }
 
 
